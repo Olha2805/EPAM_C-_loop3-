@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace LoopTasks
 {
@@ -9,8 +9,16 @@ namespace LoopTasks
         /// </summary>
         public static int SumOfOddDigits(int n)
         {
-            //this method should return the sum of the odd digits of n.
-            // TODO: delete code line below, write down your solution 
+            int result = 0;
+            for (int v = n; v > 0; v = v / 10)
+            {
+                if (v % 2 == 1)
+                {
+                    result = result + v % 10;
+                }
+             
+            }
+            return result; 
 
             throw new NotImplementedException();
         }
@@ -20,9 +28,13 @@ namespace LoopTasks
         /// </summary>
         public static int NumberOfUnitsInBinaryRecord(int n)
         {
-            //this method should return the number of units in the binary notation of n.
-            // TODO: delete code line below, write down your solution 
-
+            int result = 0;
+            for (int v = n; v > 0; v = v / 2)
+            {
+                result = result + v % 2;
+                
+            }
+            return result;
             throw new NotImplementedException();
         }
 
@@ -31,8 +43,16 @@ namespace LoopTasks
         /// </summary>
         public static int SumOfFirstNFibonacciNumbers(int n)
         {
-            //this method should return the sum of the first n Fibonacci numbers.
-            // TODO: delete code line below, write down your solution 
+            int result = 0;
+            int count = 0;
+            for (int x1 = 0, x2 = 1; count < n - 1; count++)
+            {
+                int xn = x1 + x2;
+                result = result + x2;                
+                x1 = x2;
+                x2 = xn;          
+            }
+            return result;
 
             throw new NotImplementedException();
         }
